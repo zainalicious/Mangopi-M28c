@@ -47,12 +47,12 @@ uci delete network.wan6 2>/dev/null
 
 # Buat interface lte (IPv4 via DHCP)
 uci set network.lte=interface
-uci set network.lte.device='usb0'
+uci set network.lte.device='eth1'
 uci set network.lte.proto='dhcp'
 
 # Buat interface lte6 (IPv6 via DHCPv6)
 uci set network.lte6=interface
-uci set network.lte6.device='usb0'
+uci set network.lte6.device='eth1'
 uci set network.lte6.proto='dhcpv6'
 uci set network.lte6.reqaddress='try'
 uci set network.lte6.reqprefix='auto'
