@@ -113,4 +113,17 @@ uci commit dhcp
 uci set system.@system[0].hostname='M28c'
 uci commit system
 
+# == setup cpu core ==
+uci set cpufreq.cpufreq.governor0='schedutil'
+uci set cpufreq.cpufreq.minfreq0='1200000'
+uci set cpufreq.cpufreq.maxfreq0='2016000'
+uci set cpufreq.global.set='1'
+uci commit cpufreq
+
+# == setup dropbear ==
+uci del dropbear.main.enable
+uci del dropbear.main.Interface
+uci del dropbear.main.RootPasswordAuth
+uci commit dropbear
+
 echo "All done!"
